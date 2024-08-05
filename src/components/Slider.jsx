@@ -39,7 +39,7 @@ const Slider = ({ autoSlide = false, autoSlideInterval = 3000 }) => {
           {albumsData.map((_, i) => (
             <div
               key={i}
-              className={`transition-all w-3 h-3 bg-white rounded-full ${cur === i ? 'p-3' : 'bg-opacity-50'}`}
+              className={`transition-all w-3 h-3 bg-white rounded-full ${cur === i ? 'p-2' : 'bg-opacity-50'}`}
             ></div>
           ))}
         </div>
