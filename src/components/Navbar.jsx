@@ -18,6 +18,7 @@ const Navbar = () => {
                 <a href="/" className="font-medium text-md text-white hover:text-gray-400">News</a>
                 <a href="/" className="font-medium text-md text-white hover:text-gray-400">Tech</a>
                 <a href="/" className="font-medium text-md text-white hover:text-gray-400">Entertainment</a>
+                <a href="/" className="font-medium text-md text-white hover:text-gray-400">Premium</a>
             </div>
 
             <button className="hidden lg:flex border-gray-500 text-white bg-blue-800 rounded-md px-6 py-2 items-center hover:bg-gray-300 hover:border hover:border-gray-500 hover:text-black gap-2 group">
@@ -42,6 +43,7 @@ const Navbar = () => {
                     <a href="/" className="font-medium  text-white hover:bg-gray-100 hover:text-black rounded-lg  p-2">News</a>
                     <a href="/" className="font-medium  text-white hover:bg-gray-100 hover:text-black rounded-lg p-2">Tech</a>
                     <a href="/" className="font-medium  text-white hover:bg-gray-100 hover:text-black rounded-lg p-2">Entertainment</a>
+                    <a href="/" className="font-medium  text-white hover:bg-gray-100 hover:text-black rounded-lg p-2">Premium</a>
                 </div>
                <div className="mt-6">
                     <button className="border-gray-500 text-white bg-blue-800 rounded-md px-6 py-2 items-center hover:bg-gray-300 hover:border hover:border-gray-500 hover:text-black group">

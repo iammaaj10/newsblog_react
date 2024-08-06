@@ -27,10 +27,10 @@ const Slider = ({ autoSlide = false, autoSlideInterval = 3000 }) => {
               alt={`slide-${index}`}
               className='w-full h-full object-cover opacity-90'
             />
-            <div className='absolute top-20  right-0 text-start left-10 p-3'>
+            <div className='absolute top-20  right-0 text-start left-36 p-3'>
               <button className='text-white bg-red-600 rounded-lg p-3 font-bold'>{btn}</button>
             </div>
-            <div className='absolute top-36 left-0 w-md-max text-start text-white p-2 bg-black bg-opacity-20'>
+            <div className='absolute top-36 left-36 w-1/4 text-start text-white p-2 bg-black bg-opacity-50 rounded-lg '>
               <p className='text-2xl font-bold w-fit'>{desc}</p>
             </div>
           </div>
