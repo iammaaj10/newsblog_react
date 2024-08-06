@@ -17,13 +17,23 @@ const Slider = ({ autoSlide = false, autoSlideInterval = 3000 }) => {
   return (
     <div className='overflow-hidden h-[90vh] w-full relative'>
       <div className='flex w-full h-full'>
-        {albumsData.map((image, index) => (
-          <img
+        {albumsData.map(({ image, desc, btn }, index) => (
+          <div
             key={index}
-            src={image}
-            alt={`slide-${index}`}
             className={`w-full h-full object-cover transition-transform duration-600 ease-in-out ${index === cur ? 'block' : 'hidden'}`}
-          />
+          >
+            <img
+              src={image}
+              alt={`slide-${index}`}
+              className='w-full h-full object-cover opacity-90'
+            />
+            <div className='absolute top-20  right-0 text-start left-10 p-3'>
+              <button className='text-white bg-red-600 rounded-lg p-3 font-bold'>{btn}</button>
+            </div>
+            <div className='absolute top-36 left-0 w-md-max text-start text-white p-2 bg-black bg-opacity-20'>
+              <p className='text-2xl font-bold w-fit'>{desc}</p>
+            </div>
+          </div>
         ))}
       </div>
       <div className='absolute top-1/2 transform -translate-y-1/2 w-full flex justify-between px-4 z-10'>
