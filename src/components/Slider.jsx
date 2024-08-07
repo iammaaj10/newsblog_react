@@ -44,7 +44,7 @@ const Slider = ({ autoSlide = false, autoSlideInterval = 3000 }) => {
           <i className="fa-solid fa-arrow-right text-black font-bold"></i>
         </button>
       </div>
-      <div className='absolute bottom-4 right-0 left-0'>
+      <div className='absolute lg:bottom-4 bottom-1/2 right-0 left-0'>
         <div className='flex items-center justify-center gap-2'>
           {albumsData.map((_, i) => (
             <div
