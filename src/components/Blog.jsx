@@ -7,10 +7,10 @@ const Blog = () => {
         <div className='flex justify-between '>
         <p className='text-md font-semibold text-gray-400 '>Dont miss the daily news</p>
         <div className='flex gap-3'>
-        <button className='text-white font-bold bg-orange-700 rounded-md p-2 '>World</button>
-        <button className='text-white font-bold bg-orange-700 rounded-md p-2 '>Technology</button>
-        <button className='text-white font-bold bg-orange-700 rounded-md p-2 '>Business</button>
-        <button className='text-white font-bold bg-orange-700 rounded-md p-2 '>Sports</button>
+        <button className='text-white font-bold bg-orange-700 rounded-md p-2 lg:m-1 hover:bg-gray-400 hover:text-black'>World</button>
+        <button className='text-white font-bold bg-orange-700 rounded-md p-2 lg:m-1 hover:bg-gray-400 hover:text-black'>Technology</button>
+        <button className='text-white font-bold bg-orange-700 rounded-md p-2 lg:m-1 hover:bg-gray-400 hover:text-black'>Business</button>
+        <button className='text-white font-bold bg-orange-700 rounded-md p-2 lg:m-1 hover:bg-gray-400 hover:text-black'>Sports</button>
         </div>
         
         </div>
