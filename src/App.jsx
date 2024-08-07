@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from "./components/Navbar";
 import Slider from "./components/Slider";
+import Home from './pages/Home';
 
 function App() {
   return (
     <>
       <div>
-        <Navbar />
-        <Slider autoSlide={true} autoSlideInterval={3000} />
+        <Home />
       </div>
     </>
   );

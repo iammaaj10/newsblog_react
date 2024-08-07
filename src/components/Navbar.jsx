@@ -8,7 +8,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="nav  flex items-center justify-between p-3  lg:bg-neutral-800">
+        <nav className="nav  flex items-center justify-between p-3  lg:bg-neutral-800 ">
             <h2 className="text-2xl text-blue-400 font-bold">
                 News<span className="text-3xl text-red-500 font-bold">B</span>logs
             </h2>
