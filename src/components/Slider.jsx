@@ -28,7 +28,7 @@ const Slider = ({ autoSlide = false, autoSlideInterval = 3000 }) => {
               className='w-full h-full object-cover opacity-90'
             />
             <div className='absolute lg:top-20 right-0 lg:text-start left-0 lg:left-36 p-3 hidden lg:block'>
-              <button className='text-white bg-red-600 rounded-lg p-3 font-bold'>{btn}</button>
+              <button className='text-white bg-orange-700 rounded-lg p-3 font-bold'>{btn}</button>
             </div>
             <div className='absolute lg:top-36 left-0 lg:left-36 lg:w-1/4 lg:text-start text-white p-2 bg-black bg-opacity-50 rounded-lg hidden lg:block'>
               <p className='text-2xl font-bold w-fit'>{desc}</p>
