@@ -1,21 +1,35 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { BrowserRouter,createBrowserRouter} from 'react-router-dom'
-import Home from './pages/Home.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import App from './App.jsx';
+import Home from './pages/Home.jsx';
+import News from './pages/News.jsx';
+import Layout from './components/Layout.jsx';
+import './index.css';
+
+
 const router = createBrowserRouter([
   {
-    path:'/',
-    element:<Home/>
-  }
-])
-ReactDOM.createRoot(document.getElementById('root')).render(
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '',
+        element: <Home />,
+      },
+      {
+        path: 'news',
+        element: <News />,
+      },
+    ],
+  },
+]);
 
- 
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-)
+    <App/>
+    <RouterProvider router={router} />
+    
+  </React.StrictMode>
+);
+
