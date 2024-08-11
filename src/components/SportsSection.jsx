@@ -18,11 +18,10 @@ const SportsSection = () => {
       try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log('API Response:', result); // Log the entire response to understand its structure
+       
 
-        // Assuming the response has an 'events' key
         if (result && result.events) {
-          setEvents(result.events); // Set the events data
+          setEvents(result.events); 
         } else {
           console.error('No events data available');
           setEvents([]);
