@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,11 +15,46 @@ const Navbar = () => {
             </h2>
 
             <div className="hidden lg:flex gap-12">
-                <Link to="/" className="font-medium text-md text-white hover:text-gray-400">Home</Link>
-                <Link to="/news" className="font-medium text-md text-white hover:text-gray-400">News</Link>
-                <Link to="/tech" className="font-medium text-md text-white hover:text-gray-400">Tech</Link>
-                <Link to="/entertainment" className="font-medium text-md text-white hover:text-gray-400">Entertainment</Link>
-                <Link to="/premium" className="font-medium text-md text-white hover:text-gray-400">Premium</Link>
+                <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                        `font-bold block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-gray-500" : "text-white"} hover:text-orange-700`
+                    }
+                >
+                    Home
+                </NavLink>
+                <NavLink
+                    to="/news"
+                    className={({ isActive }) =>
+                        `font-bold block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-gray-500" : "text-white"} hover:text-orange-700`
+                    }
+                >
+                    News
+                </NavLink>
+                <NavLink
+                    to="/tech"
+                    className={({ isActive }) =>
+                        `font-bold block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-gray-500" : "text-white"} hover:text-orange-700`
+                    }
+                >
+                    Tech
+                </NavLink>
+                <NavLink
+                    to="/entertainment"
+                    className={({ isActive }) =>
+                        `font-bold block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-gray-500" : "text-white"} hover:text-orange-700`
+                    }
+                >
+                    Entertainment
+                </NavLink>
+                <NavLink
+                    to="/premium"
+                    className={({ isActive }) =>
+                        `font-bold block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-gray-500" : "text-white"} hover:text-orange-700`
+                    }
+                >
+                    Premium
+                </NavLink>
             </div>
 
             <button className="hidden lg:flex border-gray-500 text-white bg-blue-800 rounded-md px-6 py-2 items-center hover:bg-gray-300 hover:border hover:border-gray-500 hover:text-black gap-2 group">
@@ -39,12 +74,48 @@ const Navbar = () => {
                 </div>
 
                 <div className="mt-10 flex flex-col gap-9 p-3">
-                    <Link to="/" className="font-medium text-white hover:bg-gray-100 hover:text-black rounded-lg p-2">Home</Link>
-                    <Link to="/news" className="font-medium text-white hover:bg-gray-100 hover:text-black rounded-lg p-2">News</Link>
-                    <Link to="/tech" className="font-medium text-white hover:bg-gray-100 hover:text-black rounded-lg p-2">Tech</Link>
-                    <Link to="/entertainment" className="font-medium text-white hover:bg-gray-100 hover:text-black rounded-lg p-2">Entertainment</Link>
-                    <Link to="/premium" className="font-medium text-white hover:bg-gray-100 hover:text-black rounded-lg p-2">Premium</Link>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-white"} border-b border-gray-100 hover:bg-gray-50 hover:text-orange-700`
+                        }
+                    >
+                        Home
+                    </NavLink>
+                    <NavLink
+                        to="/news"
+                        className={({ isActive }) =>
+                            `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-white"} border-b border-gray-100 hover:bg-gray-50 hover:text-orange-700`
+                        }
+                    >
+                        News
+                    </NavLink>
+                    <NavLink
+                        to="/tech"
+                        className={({ isActive }) =>
+                            `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-white"} border-b border-gray-100 hover:bg-gray-50 hover:text-orange-700`
+                        }
+                    >
+                        Tech
+                    </NavLink>
+                    <NavLink
+                        to="/entertainment"
+                        className={({ isActive }) =>
+                            `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-white"} border-b border-gray-100 hover:bg-gray-50 hover:text-orange-700`
+                        }
+                    >
+                        Entertainment
+                    </NavLink>
+                    <NavLink
+                        to="/premium"
+                        className={({ isActive }) =>
+                            `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-white"} border-b border-gray-100 hover:bg-gray-50 hover:text-orange-700`
+                        }
+                    >
+                        Premium
+                    </NavLink>
                 </div>
+
                 <div className="mt-6">
                     <button className="border-gray-500 text-white bg-blue-800 rounded-md px-6 py-2 items-center hover:bg-gray-300 hover:border hover:border-gray-500 hover:text-black group">
                         Join Us

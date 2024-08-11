@@ -58,25 +58,18 @@ const Tech = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {tech.map((item, index) => (
-                    <div key={index} className="bg-neutral-900 text-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-                        <img
-                            src={item.image}
-                            alt={item.title}
-                            className="w-full h-48 object-cover"
-                        />
-                        <div className="p-6">
-                            <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                            <p className="text-sm mb-2"><strong>Published:</strong> {item.published}</p>
-                            <p className="text-sm mb-4"><strong>Source:</strong> {item.source}</p>
-                            <a
-                                href={item.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-400 hover:underline"
-                            >
-                                Read More
-                            </a>
-                        </div>
+                    <div key={index} className="bg-neutral-900 text-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                        <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+                        <p className="text-sm mb-2"><strong>Published:</strong> {item.published}</p>
+                        <p className="text-sm mb-4"><strong>Source:</strong> {item.source}</p>
+                        <a
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:underline"
+                        >
+                            Read More
+                        </a>
                     </div>
                 ))}
             </div>
