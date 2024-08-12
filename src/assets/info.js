@@ -36,3 +36,7 @@ export const albumsData = [
     desc: "The recession impacts the IT sector. A huge number of people lost their jobs",
    }
 ];
+
+export const buttons = [
+   "World", "Tech", "Entertainment", "Sports", "Business"
+ ];
