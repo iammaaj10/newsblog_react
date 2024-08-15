@@ -22,7 +22,7 @@ const Footer = () => {
 
         </div>
 
-<div className='flex gap-20'>
+<div className='flex flex-col lg:flex-row gap-20 mt-4'>
   <div className='max-w-xl'>
     <h1 className='text-violet-700 font-bold font-poppins text-xl mb-2 '>About Us</h1>
     <p className='text-violet-700 text-md font-poppins'>
@@ -48,11 +48,15 @@ const Footer = () => {
   </button>
 </div>
  </div>
- <div>
-    <h1></h1>
+ <div className='p-2 max-w-2xl'>
+    <h1 className='text-violet-700 font-bold font-poppins text-xl'>Register Now </h1>
+    <button className='bg-violet-700 text-white font-bold font-poppins rounded-full p-2 transition-transform transform hover:scale-125 hover:bg-gray-200 hover:text-black'>Click Here</button>
+    <p className='text-violet-700 text-md font-md font-poppins w-fit '>Hurry up and do the registration for the osm experience in the world of news and newsblogs !!! </p>
  </div>
  </div>
-   
+   <div className='mt-5 p-2 text-center'>
+   <p className='text-violet-700 font-bold font-poppins'>Copyright &copy; 2024 Designed by <span class="text-gray-400 uppercase">maaj</span></p>
+   </div>
     </div>
   )
 }
