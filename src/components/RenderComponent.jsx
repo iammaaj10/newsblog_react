@@ -4,6 +4,7 @@ import NewsSection from '../components/NewsSection';
 import Entertainmentnews from '../components/Entertainmentnews';
 import SportsSection from '../components/SportsSection';
 import Tech from '../components/Tech';
+import Business from '../components/Business';
 
 const RenderComponent = ({ index, selected, setSelected }) => {
   switch(index) {
@@ -15,6 +16,9 @@ const RenderComponent = ({ index, selected, setSelected }) => {
       return <Entertainmentnews />;
     case 3:
       return  <SportsSection />;
+
+    case 4 :
+        return <Business/> 
     default:
       return null;
   }
