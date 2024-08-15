@@ -8,3 +8,9 @@
 .nav {
   font-family: 'Poppins', sans-serif;
 }
+.selected-button{
+  background-color: gray;
+  border-radius: 20px;
+  padding: 12px;
+  color: black;
+}
