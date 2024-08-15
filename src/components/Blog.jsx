@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { buttons } from '../assets/info';
 const Blog = () => {
+  const [selected,setSelected] =useState(0)
   return (
     <div className='p-3 mt-10'>
       <h1 className='text-2xl items-start font-poppins font-semibold text-black'>Latest world news</h1>
@@ -11,7 +12,7 @@ const Blog = () => {
             buttons.map((button, index) => (
               <button 
                 key={index} 
-                className='p-3 bg-orange-600 border border-orange-400 rounded-2xl m-2 hover:bg-gray-400 text-white font-bold hover:text-black hover:border-gray-400'
+                className='p-3 bg-orange-600 border border-orange-400 rounded-2xl m-2 hover:bg-gray-400 text-white font-bold hover:text-black hover:border-gray-400' selected={selected} setSelected={setSelected}
               >
                 {button}
               </button>
