@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react';
 
 const Business = () => {
-    const [business, setBusiness] = useState([]);
+    const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchBusiness = async () => {
-            const url = 'https://reuters-business-and-financial-news.p.rapidapi.com/market-assets/list';
+        const fetchNews = async () => {
+            const url = 'https://biztoc.p.rapidapi.com/news/source/bbc';
             const options = {
                 method: 'GET',
                 headers: {
                     'x-rapidapi-key': '036751a1bamshf51a274e719655ep1a1063jsnb095ccbc475c',
-                    'x-rapidapi-host': 'reuters-business-and-financial-news.p.rapidapi.com'
+                    'x-rapidapi-host': 'biztoc.p.rapidapi.com'
                 }
             };
 
             try {
                 const response = await fetch(url, options);
                 const result = await response.json();
+
                 if (result && result.length > 0) {
-                    setBusiness(result);
+                    setNews(result);
                 } else {
-                    setBusiness([]);
+                    setNews([]);
                 }
                 setLoading(false);
             } catch (error) {
@@ -29,7 +30,8 @@ const Business = () => {
                 setLoading(false);
             }
         };
-        fetchBusiness();
+
+        fetchNews();
     }, []);
 
     if (loading) {
@@ -42,15 +44,13 @@ const Business = () => {
 
     return (
         <div className="p-6">
-            <h1 className="text-3xl font-bold text-blue-700 mb-6">Business News</h1>
-            <div className="grid grid-cols-1 gap-6">
-                {business.map((item, index) => (
-                    <div key={index} className="p-4 bg-white shadow-md rounded-lg">
-                        <h2 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h2>
-                        <p className="text-gray-600 mb-4">
-                            {item.description || "No detailed news available. Click 'Read more' to view the full article."}
-                        </p>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+            <h1 className="text-3xl font-bold text-center mb-8">Latest Business News</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {news.map((item, index) => (
+                    <div key={index} className="border p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+                        <p className="text-gray-600 mb-4">{item.summary}</p>
+                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                             Read more
                         </a>
                     </div>
@@ -58,6 +58,6 @@ const Business = () => {
             </div>
         </div>
     );
-};
+}
 
 export default Business;
