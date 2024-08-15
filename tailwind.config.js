@@ -10,6 +10,10 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         
       },
+      backgroundcolor: {
+          primary:"#8806ce"
+      },
+
     },
   },
   plugins: [],
