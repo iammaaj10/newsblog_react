@@ -29,8 +29,8 @@ const Fashion = () => {
                 Lets dive into the world of fashion click on button to get more details and enjoy the world of fashion in true sense...
             </p>
             <div className='text-center'>
-            <button className='p-3 m-3 rounded-2xl bg-violet-700 text-white font-semibold  hover:bg-gray-400 hover:text-black hover:border-gray-400 '>
-                Get More Deatils
+            <button className='p-3 m-3 rounded-2xl bg-violet-700 text-white font-semibold  hover:bg-gray-400 hover:text-black hover:border-gray-400 transition-transform transform hover:scale-105'>
+                Get More Details
             </button>
             </div>
            
