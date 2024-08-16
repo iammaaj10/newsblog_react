@@ -3,6 +3,16 @@ import react2 from './react2.jpg';
 import react4 from './react4.jpg';
 import react5 from './react5.jpg';
 import react6 from './react6.jpg';
+import fashion from './fashion.jpg'
+import fashion1 from './fashion.jpg'
+import fashion2 from './fashion.jpg'
+
+
+export const fashiondate = [
+   { image: fashion, description: "Fashion Image 1" },
+   { image: fashion1, description: "Fashion Image 2" },
+   { image: fashion2, description: "Fashion Image 3" }
+ ];
 
 export const albumsData = [
    {
