@@ -4,14 +4,18 @@ import react4 from './react4.jpg';
 import react5 from './react5.jpg';
 import react6 from './react6.jpg';
 import fashion from './fashion.jpg'
-import fashion1 from './fashion.jpg'
-import fashion2 from './fashion.jpg'
+import fashion1 from './fashion1.jpg'
+import fashion2 from './fashion2.jpg'
+import fashion3 from './fashion3.jpg'
+import fashion4 from './fashion4.jpg'
 
 
 export const fashiondate = [
    { image: fashion, description: "Fashion Image 1" },
    { image: fashion1, description: "Fashion Image 2" },
-   { image: fashion2, description: "Fashion Image 3" }
+   { image: fashion2, description: "Fashion Image 3" },
+   {image: fashion3, description:"Fashion Image 4"},
+   {image : fashion4 , description:"Fashion Image 5"}
  ];
 
 export const albumsData = [
