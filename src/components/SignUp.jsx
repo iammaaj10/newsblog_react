@@ -15,7 +15,7 @@ const SignUp = () => {
                 <input type="password" placeholder='Confirm the password' className='text-black bg-slate-300 p-3 rounded-md' />
             </div>
             <div className='text-center'>
-                <button className='bg-blue-700 rounded-3xl p-2 m-3 w-28 font-semibold text-white'>Sign Up</button>
+                <button className='bg-blue-700 rounded-3xl p-2 m-3 w-28 font-semibold text-white hover:bg-orange-500 hover:text-black'>Sign Up</button>
             </div>
         </div>
     </div>
