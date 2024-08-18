@@ -5,6 +5,8 @@ import SignUp from '../components/SignUp';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showSignUp, setShowSignUp] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
+
 
     const toggle = () => {
         setIsOpen(!isOpen);
@@ -13,6 +15,10 @@ const Navbar = () => {
     const handleSignUpClick = () => {
         setShowSignUp(true);
     };
+
+    const handleLogin=()=>{
+        setShowLogin(true);
+    }
 
     return (
         <nav className="nav flex items-center justify-between p-3 lg:bg-neutral-800">
