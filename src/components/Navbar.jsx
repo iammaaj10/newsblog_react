@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import SignUp from '../components/SignUp';
 
-
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [showSignUp, setShowSignUp] = useState(false);
 
     const toggle = () => {
         setIsOpen(!isOpen);
+    };
+
+    const handleSignUpClick = () => {
+        setShowSignUp(true);
     };
 
     return (
@@ -59,7 +63,7 @@ const Navbar = () => {
                 </NavLink>
             </div>
 
-            <button className="hidden lg:flex border-gray-500 text-white bg-blue-800 rounded-md px-6 py-2 items-center hover:bg-gray-300 hover:border hover:border-gray-500 hover:text-black gap-2 group">
+            <button className="hidden lg:flex border-gray-500 text-white bg-blue-800 rounded-md px-6 py-2 items-center hover:bg-gray-300 hover:border hover:border-gray-500 hover:text-black gap-2 group" onClick={handleSignUpClick}>
                 Join Us
                 <i className="fa-solid fa-arrow-right group-hover:translate-x-2 transition duration-300"></i>
             </button>
@@ -119,14 +123,14 @@ const Navbar = () => {
                 </div>
 
                 <div className="mt-6">
-                    <button className="border-gray-500 text-white bg-blue-800 rounded-md px-6 py-2 items-center hover:bg-gray-300 hover:border hover:border-gray-500 hover:text-black group">
+                    <button className="border-gray-500 text-white bg-blue-800 rounded-md px-6 py-2 items-center hover:bg-gray-300 hover:border hover:border-gray-500 hover:text-black group" onClick={handleSignUpClick}>
                         Join Us
                         <i className="fa-solid fa-arrow-right group-hover:translate-x-2 transition duration-300"></i>
-
                     </button>
-                    <SignUp/>
                 </div>
             </div>
+
+            {showSignUp && <SignUp />}
         </nav>
     );
 };
