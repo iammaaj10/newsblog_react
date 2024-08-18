@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import SignUp from '../components/SignUp';
+import Login from './Login';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showSignUp, setShowSignUp] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
-
 
     const toggle = () => {
         setIsOpen(!isOpen);
@@ -16,7 +16,7 @@ const Navbar = () => {
         setShowSignUp(true);
     };
 
-    const handleLogin=()=>{
+    const handleLogin = () => {
         setShowLogin(true);
     }
 
@@ -59,14 +59,12 @@ const Navbar = () => {
                 >
                     Entertainment
                 </NavLink>
-                <NavLink
-                    to="/premium"
-                    className={({ isActive }) =>
-                        `font-bold block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-gray-500" : "text-white"} hover:text-orange-700`
-                    }
+                <button
+                    className="font-bold block py-2 pr-4 pl-3 duration-200 text-white hover:text-orange-700"
+                    onClick={handleLogin}
                 >
                     Premium
-                </NavLink>
+                </button>
             </div>
 
             <button className="hidden lg:flex border-gray-500 text-white bg-blue-800 rounded-md px-6 py-2 items-center hover:bg-gray-300 hover:border hover:border-gray-500 hover:text-black gap-2 group" onClick={handleSignUpClick}>
@@ -118,14 +116,12 @@ const Navbar = () => {
                     >
                         Entertainment
                     </NavLink>
-                    <NavLink
-                        to="/premium"
-                        className={({ isActive }) =>
-                            `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-white"} border-b border-gray-100 hover:bg-gray-50 hover:text-orange-700`
-                        }
+                    <button
+                        className="block py-2 pr-4 pl-3 duration-200 text-white hover:text-orange-700"
+                        onClick={handleLogin}
                     >
                         Premium
-                    </NavLink>
+                    </button>
                 </div>
 
                 <div className="mt-6">
@@ -137,6 +133,7 @@ const Navbar = () => {
             </div>
 
             {showSignUp && <SignUp />}
+            {showLogin && <Login />}
         </nav>
     );
 };
