@@ -15,9 +15,15 @@ const Navbar = () => {
     const handleSignUpClick = () => {
         setShowSignUp(true);
     };
+    const handleSignUpClick1 = () => {
+        setShowSignUp(false);
+    };
 
     const handleLogin = () => {
         setShowLogin(true);
+    }
+    const handleLogin1=()=>{
+        setShowLogin(false);
     }
 
     return (
@@ -133,7 +139,8 @@ const Navbar = () => {
             </div>
 
             {showSignUp && <SignUp />}
-            {showLogin && <Login />}
+            {showLogin && <Login onClose={handleLogin1}
+             />}
         </nav>
     );
 };
