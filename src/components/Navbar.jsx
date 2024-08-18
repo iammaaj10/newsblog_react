@@ -138,7 +138,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {showSignUp && <SignUp />}
+            {showSignUp && <SignUp onClose1={handleSignUpClick1}/>}
             {showLogin && <Login onClose={handleLogin1}
              />}
         </nav>
