@@ -3,7 +3,6 @@ import Slider from '../components/Slider';
 import RenderComponent from '../components/RenderComponent';
 import Blog  from '../components/Blog';
 import Fashion from '../components/Fashion';
-import SignUp from '../components/SignUp';
 
 const Home = () => {
   const [selected, setSelected] = useState(0);
@@ -14,7 +13,7 @@ const Home = () => {
       <Blog selected={selected} setSelected={setSelected} />
       <RenderComponent index={selected} selected={selected} setSelected={setSelected} />
       <Fashion/>
-      <SignUp/>
+      
     </div>
   );
 };

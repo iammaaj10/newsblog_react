@@ -2,7 +2,7 @@ import React from 'react'
 
 const SignUp = () => {
   return (
-    <div className='flex items-center justify-center mt-6'>
+    <div className='flex items-center justify-center mt-6 fixed inset-0 backdrop-blur-sm bg-opacity-30 z-10'>
         <div className='w-96 h-full p-6 m-3 border rounded-md bg-slate-100 border-white shadow-md'>
             <div className='p-3 flex flex-col gap-4'>
                 <div className='text-center'>

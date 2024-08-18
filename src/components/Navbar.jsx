@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import SignUp from '../components/SignUp';
+
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -120,7 +122,9 @@ const Navbar = () => {
                     <button className="border-gray-500 text-white bg-blue-800 rounded-md px-6 py-2 items-center hover:bg-gray-300 hover:border hover:border-gray-500 hover:text-black group">
                         Join Us
                         <i className="fa-solid fa-arrow-right group-hover:translate-x-2 transition duration-300"></i>
+
                     </button>
+                    <SignUp/>
                 </div>
             </div>
         </nav>
