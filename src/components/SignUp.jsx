@@ -4,19 +4,19 @@ const SignUp = ({onClose1}) => {
   return (
     <div className='flex items-center justify-center mt-6 fixed inset-0 backdrop-blur-sm bg-opacity-30 z-10'>
         <div className='w-96 p-6 m-3 border rounded-md bg-slate-100 border-white shadow-md relative'>
-        <i class="fa-regular fa-circle-xmark right-[3px] absolute text-black top-1 font-bold text-lg hover:text-red-600" onClick={onClose1}></i>
+        <i class="fa-regular fa-circle-xmark right-2 absolute text-black top-2 font-bold text-lg hover:text-red-600" onClick={onClose1}></i>
         <form action="">
             <div className='p-3 flex flex-col gap-4'>
             
                 <div className='text-center'>
                     <h1 className='text-black font-bold font-poppins text-2xl'>Sign Up Option</h1>
                 </div>
-                
-                <input type="text" placeholder='Enter the username' className='text-black bg-slate-300 p-3 rounded-md'/>
-                <input type="text" placeholder='Enter the email' className='text-black bg-slate-300 p-3 rounded-md'/>
-                <input type="number" placeholder='Enter the phone number' className='text-black bg-slate-300 p-3 rounded-md'/>
-                <input type="password" placeholder='Enter the password' className='text-black bg-slate-300 p-3 rounded-md'/>
-                <input type="password" placeholder='Confirm the password' className='text-black bg-slate-300 p-3 rounded-md' />
+            
+                <input type="text" placeholder='Enter the username' className='text-black bg-slate-100 p-3 rounded-md' required/>
+                <input type="text" placeholder='Enter the email' className='text-black bg-slate-100 p-3 rounded-md' required/>
+                <input type="number" placeholder='Enter the phone number' className='text-black bg-slate-100 p-3 rounded-md' required/>
+                <input type="password" placeholder='Enter the password' className='text-black bg-slate-100 p-3 rounded-md' required/>
+                <input type="password" placeholder='Confirm the password' className='text-black bg-slate-100 p-3 rounded-md' required />
                 
             </div>
             <div className='text-center'>
