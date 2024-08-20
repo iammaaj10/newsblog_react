@@ -16,10 +16,10 @@ const SignUp = ({onClose1}) => {
                     <h1 className='text-black font-bold font-poppins text-2xl'>Sign Up Option</h1>
                 </div>
             
-                <input type="text" placeholder='Enter the username' className='text-black bg-slate-100 p-3 rounded-md' required/>
-                <input type="text" placeholder='Enter the email' className='text-black bg-slate-100 p-3 rounded-md' required/>
-                <input type="number" placeholder='Enter the phone number' className='text-black bg-slate-100 p-3 rounded-md' required/>
-                <input type="password" placeholder='Enter the password' className='text-black bg-slate-100 p-3 rounded-md' required/>
+                <input type="text" placeholder='Enter the username' className='text-black bg-slate-100 p-3 rounded-md' onChange={(e)=>setusername( e.target.value)} required/>
+                <input type="text" placeholder='Enter the email' className='text-black bg-slate-100 p-3 rounded-md' onChange={(e)=>setemail( e.target.value)} required/>
+                <input type="number" placeholder='Enter the phone number' className='text-black bg-slate-100 p-3 rounded-md' onChange={(e)=>setphone( e.target.value)} required/>
+                <input type="password" placeholder='Enter the password' className='text-black bg-slate-100 p-3 rounded-md' onChange={(e)=>setpassword( e.target.value)} required/>
                 
                 
             </div>
