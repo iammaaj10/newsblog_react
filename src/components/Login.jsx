@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'; 
 import { auth } from './firebase'; 
 
@@ -25,6 +25,7 @@ const Login = ({ onClose }) => {
 
     return (
         <div className='flex items-center justify-center mt-6 fixed inset-0 backdrop-blur-sm bg-opacity-30 z-10'>
+            <ToastContainer/>
             <div className='w-96 p-6 m-3 border rounded-md bg-slate-100 border-white shadow-md relative'>
                 <i
                     className="fa-regular fa-circle-xmark right-2 absolute text-black top-2 font-bold text-lg hover:text-orange-600 cursor-pointer"
