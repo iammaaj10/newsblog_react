@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {createUserWithEmailAndPassword} from 'firebase/auth'
-import{auth} from './firebase'
-
+import{auth,db} from './firebase'
+import { setDoc,doc } from 'firebase/firestore'
 const SignUp = ({onClose1}) => {
     const [username,setusername]= useState("")
     const [email,setemail]= useState("")
@@ -14,6 +14,14 @@ const SignUp = ({onClose1}) => {
             await  createUserWithEmailAndPassword(auth,email,password)
             const user = auth.currentUser
             console.log(user);
+            if(user)
+            {
+                await setDoc(doc(db,"Users",user.uid),{
+                    email:user.email,
+                    username:username,
+                    phno:phone
+                })
+            }
             console.log("Registration done ");
             
             
