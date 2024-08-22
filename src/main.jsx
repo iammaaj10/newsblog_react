@@ -8,6 +8,7 @@ import Layout from './components/Layout.jsx';
 import './index.css';
 import Entertainment from './pages/Entertainment.jsx';
 import Technology from './pages/Technology.jsx';
+import Premium from './pages/Premium.jsx';
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: 'tech',
         element:<Technology/>
+      },
+      {
+        path:'premium',
+        element:<Premium/>
       }
     ],
   },
