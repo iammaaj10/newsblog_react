@@ -32,12 +32,14 @@ const router = createBrowserRouter([
         path: 'tech',
         element:<Technology/>
       },
-      {
-        path:'premium',
-        element:<Premium/>
-      }
+      
     ],
+   
   },
+  {
+    path:'premium',
+    element:<Premium/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
