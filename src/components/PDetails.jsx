@@ -6,6 +6,25 @@ import {toast} from 'react-toastify'
 
 const PDetails = () => {
     const [userDetails, setuserDetails]=useState(null)
+    const fetchUserData =async()=>{
+        auth.onAuthStateChanged(async(user)=>{
+            const docRef=doc(db,"Users",user.uid) 
+            const docSnap = await getDoc(docRef)
+            if(docSnap.exists())
+            {
+                setuserDetails(docSnap.data())
+                console.log(docSnap.data());
+                
+            }
+            else{
+                console.log("User not logged in !");
+                
+            }
+        })
+    }
+    useEffect(()=>{
+        fetchUserData()
+    },[])
   return (
     <div>
         {userDetails?(
