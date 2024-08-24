@@ -1,6 +1,7 @@
 
 import NewsSection from '../components/NewsSection'
 
+
 const News = () => {
   return (
     <div>

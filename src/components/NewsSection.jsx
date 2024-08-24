@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
-const topics = ['business', 'technology', 'sports', 'entertainment']; // Example topics
-
 const NewsSection = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedTopic, setSelectedTopic] = useState('business');
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchNews = async () => {
-      const url = `https://google-news22.p.rapidapi.com/v1/top-headlines?country=us&language=en&topic=${selectedTopic}`;
+      const url = 'https://google-news13.p.rapidapi.com/business?lr=en-US';
       const options = {
         method: 'GET',
         headers: {
           'x-rapidapi-key': '036751a1bamshf51a274e719655ep1a1063jsnb095ccbc475c',
-          'x-rapidapi-host': 'google-news22.p.rapidapi.com',
-        },
+          'x-rapidapi-host': 'google-news13.p.rapidapi.com'
+        }
       };
 
       try {
@@ -25,8 +22,10 @@ const NewsSection = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
-        if (result.data && result.data.length > 0) {
-          setNews(result.data);
+        console.log('API Response:', result);
+
+        if (result.items && result.items.length > 0) {
+          setNews(result.items);
         } else {
           setNews([]);
         }
@@ -38,7 +37,7 @@ const NewsSection = () => {
     };
 
     fetchNews();
-  }, [selectedTopic]);
+  }, []);
 
   if (loading) {
     return (
@@ -59,7 +58,7 @@ const NewsSection = () => {
   if (news.length === 0) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <p>No news articles available for the topic "{selectedTopic}".</p>
+        <p>No news articles available.</p>
       </div>
     );
   }
@@ -67,31 +66,33 @@ const NewsSection = () => {
   return (
     <div className="p-5 max-w-screen-lg mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-center">News</h1>
-
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {news.map((article, index) => (
-          <li
-            key={index}
-            className="border rounded-lg shadow-md overflow-hidden"
-          >
+          <li key={index} className="border rounded-lg shadow-md overflow-hidden">
             <a
-              href={article.url}
+              href={article.newsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block hover:bg-gray-100"
             >
-              <img
-                src={article.thumbnail}
-                alt={article.title}
-                className="w-full h-48 object-cover"
-              />
+              {article.images && article.images.thumbnail ? (
+                <img
+                  src={article.images.thumbnail}
+                  alt={article.title}
+                  className="w-full h-48 object-cover"
+                />
+              ) : (
+                <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-600">
+                  No Image Available
+                </div>
+              )}
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-2">{article.title}</h2>
-                <p className="text-sm text-gray-500 mb-1">
-                  {new Date(article.date).toLocaleDateString()}
-                </p>
+                {article.snippet && (
+                  <p className="text-sm text-gray-500 mb-1">{article.snippet}</p>
+                )}
                 <p className="text-sm text-gray-500">
-                  Source: {article.source.name}
+                  Publisher: {article.publisher}
                 </p>
               </div>
             </a>
