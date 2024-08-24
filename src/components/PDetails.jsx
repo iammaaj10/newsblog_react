@@ -1,11 +1,13 @@
 import React from 'react'
 import  { useState,useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import {auth,db} from './firebase'
 import {doc,getDoc} from "firebase/firestore"
 import {toast} from 'react-toastify'
 
 const PDetails = () => {
     const [userDetails, setuserDetails]=useState(null)
+    const navigate = useNavigate(); 
     const fetchUserData =async()=>{
         auth.onAuthStateChanged(async(user)=>{
             const docRef=doc(db,"Users",user.uid) 
@@ -25,14 +27,22 @@ const PDetails = () => {
     useEffect(()=>{
         fetchUserData()
     },[])
+
+    async function handleLogout(){
+        await auth.signOut();
+        navigate ('/')
+    }
   return (
     <div>
         {userDetails?(
             <>
-             <h3>Welcome {userDetails.username}</h3>
-             <button className='bg-blue-600 px-4 py-3 m-2 rounded-xl font-semibold'>
+            <div className='flex justify-start p-2 gap-4 '>
+            <h3 className='text-2xl font-semibold font-poppins '>Welcome <span className='bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-blue-500 to-purple-600'>{userDetails.username}</span></h3>
+             <button className='bg-blue-300 px-5 py-2  rounded-full font-semibold hover:bg-red-600 hover:text-white' onClick={handleLogout}>
                 Logout
              </button>
+            </div>
+            
             </>
         ):(
             <p className='text-center justify-center text-2xl font-semibold'>Loading...</p>
