@@ -1,8 +1,11 @@
 import React from 'react'
+import PDetails from '../components/PDetails'
 
 const Premium = () => {
   return (
-    <div>Premium</div>
+    <div>
+      <PDetails/>
+    </div>
   )
 }
 
