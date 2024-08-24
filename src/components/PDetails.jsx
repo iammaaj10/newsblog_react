@@ -37,8 +37,8 @@ const PDetails = () => {
         {userDetails?(
             <>
             <div className='flex justify-start p-2 gap-4 '>
-            <h3 className='text-2xl font-semibold font-poppins '>Welcome <span className='bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-blue-500 to-purple-600'>{userDetails.username}</span></h3>
-             <button className='bg-blue-300 px-5 py-2  rounded-full font-semibold hover:bg-red-600 hover:text-white' onClick={handleLogout}>
+            <h3 className='text-2xl font-semibold font-poppins text-white'>Welcome <span className='bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-blue-500 to-purple-600'>{userDetails.username}</span></h3>
+             <button className='bg-blue-300 px-4 py-1 rounded-full font-semibold hover:bg-red-600 hover:text-white' onClick={handleLogout}>
                 Logout
              </button>
             </div>
