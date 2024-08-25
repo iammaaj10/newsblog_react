@@ -7,12 +7,12 @@ const NewsSection = () => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const url = 'https://google-news13.p.rapidapi.com/business?lr=en-US';
+      const url = 'https://real-time-news-data.p.rapidapi.com/search?query=Elon%20Musk&limit=500&time_published=anytime&country=US&lang=en';
       const options = {
         method: 'GET',
         headers: {
           'x-rapidapi-key': '036751a1bamshf51a274e719655ep1a1063jsnb095ccbc475c',
-          'x-rapidapi-host': 'google-news13.p.rapidapi.com'
+          'x-rapidapi-host': 'real-time-news-data.p.rapidapi.com'
         }
       };
 
@@ -24,8 +24,8 @@ const NewsSection = () => {
         const result = await response.json();
         console.log('API Response:', result);
 
-        if (result.items && result.items.length > 0) {
-          setNews(result.items);
+        if (result.data && result.data.length > 0) {
+          setNews(result.data);
         } else {
           setNews([]);
         }
@@ -70,31 +70,21 @@ const NewsSection = () => {
         {news.map((article, index) => (
           <li key={index} className="border rounded-lg shadow-md overflow-hidden">
             <a
-              href={article.newsUrl}
+              href={article.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block hover:bg-gray-100"
+              className="block hover:bg-gray-100 p-4"
             >
-              {article.images && article.images.thumbnail ? (
-                <img
-                  src={article.images.thumbnail}
-                  alt={article.title}
-                  className="w-full h-48 object-cover"
-                />
-              ) : (
-                <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-600">
-                  No Image Available
-                </div>
+              <h2 className="text-lg font-semibold mb-2">{article.title}</h2>
+              {article.summary && (
+                <p className="text-sm text-gray-500 mb-1">{article.summary}</p>
               )}
-              <div className="p-4">
-                <h2 className="text-lg font-semibold mb-2">{article.title}</h2>
-                {article.snippet && (
-                  <p className="text-sm text-gray-500 mb-1">{article.snippet}</p>
-                )}
-                <p className="text-sm text-gray-500">
-                  Publisher: {article.publisher}
-                </p>
-              </div>
+              <p className="text-sm text-gray-500">
+                Source: {article.source}
+              </p>
+              <p className="text-sm text-gray-500">
+                Published: {new Date(article.time_published).toLocaleDateString()}
+              </p>
             </a>
           </li>
         ))}
