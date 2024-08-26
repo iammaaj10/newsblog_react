@@ -13,20 +13,26 @@ const SignUp = ({ onClose1 }) => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    
+    // Show a toast message immediately after clicking the button
+    toast.info('Processing your request...', { position: 'top-center' });
+    
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      const user = auth.currentUser;
-      console.log(user);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
       if (user) {
         await setDoc(doc(db, 'Users', user.uid), {
           email: user.email,
           username: username,
           phno: phone,
         });
+        toast.dismiss();  // Dismiss the previous toast
+        toast.success('User Registered Successfully', { position: 'top-center' });
       }
-      toast.success('User Registered Successfully', { position: 'top-center'  });
     } catch (error) {
       console.log(error.message);
+      toast.dismiss();  // Dismiss the previous toast
       toast.error(error.message, { position: 'bottom-center' });
     }
   };
@@ -80,7 +86,7 @@ const SignUp = ({ onClose1 }) => {
             </button>
           </div>
         </form>
-        <ToastContainer autoClose={2000}  autoOpen={1000}/>
+        <ToastContainer autoClose={2000} />
       </div>
     </div>
   );
