@@ -2,6 +2,11 @@ import React from 'react';
 import { fashiondate } from '../assets/info';
 
 const Fashion = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.href = 'http://www.pacorabanne.com/';
+  };
+
   return (
     <div className='mt-10'>
       <div className='text-center'>
@@ -15,30 +20,31 @@ const Fashion = () => {
           </div>
         ))}
 
-       
         <div className='col-span-1 md:col-start-3 md:row-start-2 rounded-lg p-3 overflow-hidden'>
           <div className='item-center justify-center bg-black rounded-lg p-3'>
-            <h1 className='text-2xl font-bold text-violet-600 font-poppins text-center mt-2'>Make your fashion sense more enhance</h1>
+            <h1 className='text-2xl font-bold text-violet-600 font-poppins text-center mt-2'>Make your fashion sense more enhanced</h1>
             <p className='text-xl font-semibold font-sans text-white'>
-              Fashion defines the personality of a person, it enhances the beauty of a person.
+              Fashion defines the personality of a person; it enhances the beauty of a person.
             </p>
             <p className='text-xl font-semibold font-sans text-white'>
-                Fashion is a way of expressing oneself through clothing and accessories. It is a form of self-expression!
+              Fashion is a way of expressing oneself through clothing and accessories. It is a form of self-expression!
             </p>
             <p className='text-xl font-semibold font-sans text-white'>
-                Lets dive into the world of fashion click on button to get more details and enjoy the world of fashion in true sense...
+              Let's dive into the world of fashion. Click on the button to get more details and enjoy the world of fashion in the true sense...
             </p>
             <div className='text-center'>
-            <button className='p-3 m-3 rounded-2xl bg-violet-700 text-white font-semibold  hover:bg-gray-400 hover:text-black hover:border-gray-400 transition-transform transform hover:scale-105'>
+              <button
+                className='p-3 m-3 rounded-2xl bg-violet-700 text-white font-semibold hover:bg-gray-400 hover:text-black hover:border-gray-400 transition-transform transform hover:scale-105'
+                onClick={handleSubmit}
+              >
                 Get More Details
-            </button>
+              </button>
             </div>
-           
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Fashion;
