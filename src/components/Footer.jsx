@@ -53,10 +53,18 @@ const Footer = () => {
               placeholder="Enter the Email"
               className="p-2 border border-violet-700 rounded-l-2xl focus:outline-none focus:ring-2 focus:ring-violet-500"
             />
+            
             <button className="bg-violet-700 text-white font-semibold font-poppins p-2 rounded-r-2xl hover:bg-gray-500 hover:text-black">
               Send
             </button>
+            
           </div>
+          <div className='mt-2'>
+            <label className='text-lg font-bold text-violet-600 font-poppins'>Enter Your Feedback</label>
+          <textarea name="" id="" className='w-60 h-24 rounded-lg'></textarea>
+          <button className='px-4 py-2 bg-violet-700 text-white font-bold font-poppins rounded-2xl hover:bg-gray-500 hover:text-black   transition-transform hover:scale-105'>Submit</button>
+          </div>
+          
         </div>
 
         <div className='p-2 max-w-2xl'>
