@@ -59,10 +59,12 @@ const Footer = () => {
             </button>
             
           </div>
-          <div className='mt-2 flex-col'>
+          <div className='mt-2 flex flex-col'>
           <label className='text-lg font-bold text-violet-600 font-poppins'>Enter Your Feedback</label>
-          <textarea name="" id="" className='w-60 h-24 rounded-lg'></textarea>
-          <button className='px-4 py-2 bg-violet-700 text-white font-bold font-poppins rounded-2xl hover:bg-gray-500 hover:text-black   transition-transform hover:scale-105'>Submit</button>
+          <textarea name="" id="" className='w-60 h-24 rounded-lg '></textarea>
+          <div className='w-80'>
+          <button className='px-4 py-2 bg-violet-700 text-white font-bold font-poppins rounded-2xl hover:bg-gray-500 hover:text-black   transition-transform hover:scale-105 mt-3 w-fit'>Submit</button>
+          </div>
           </div>
           
         </div>
