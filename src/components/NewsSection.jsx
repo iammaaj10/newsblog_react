@@ -68,23 +68,33 @@ const NewsSection = () => {
       <h1 className="text-3xl font-bold mb-6 text-center">News</h1>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {news.map((article, index) => (
-          <li key={index} className="border rounded-lg shadow-md overflow-hidden">
+          <li key={index} className="border rounded-lg shadow-md overflow-hidden p-4">
+            {/* Article Image */}
+            {article.photo_url && (
+              <img
+                src={article.photo_url}
+                alt="Article"
+                className="w-full h-48 object-cover mb-4"
+              />
+            )}
+            <h2 className="text-lg font-semibold mb-2">{article.title}</h2>
+            {article.snippet && (
+              <p className="text-sm text-gray-500 mb-1">{article.snippet}</p>
+            )}
+            <p className="text-sm text-gray-500">
+              Source: {article.source_name || 'Unknown'}
+            </p>
+            <p className="text-sm text-gray-500">
+              Published: {new Date(article.published_datetime_utc).toLocaleDateString()}
+            </p>
+            {/* Read more link */}
             <a
-              href={article.url}
+              href={article.link} // Dynamic article URL from API
               target="_blank"
               rel="noopener noreferrer"
-              className="block hover:bg-gray-100 p-4"
+              className="text-blue-500 mt-2 font-semibold inline-block"
             >
-              <h2 className="text-lg font-semibold mb-2">{article.title}</h2>
-              {article.summary && (
-                <p className="text-sm text-gray-500 mb-1">{article.summary}</p>
-              )}
-              <p className="text-sm text-gray-500">
-                Source: {article.source}
-              </p>
-              <p className="text-sm text-gray-500">
-                Published: {new Date(article.time_published).toLocaleDateString()}
-              </p>
+              Read more
             </a>
           </li>
         ))}
