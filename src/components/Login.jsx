@@ -18,6 +18,7 @@ const Login = ({ onClose }) => {
 
             
             navigate('/premium');
+            
         } catch (error) {
             toast.error(error.message, { position: 'bottom-center' });
         }
