@@ -14,7 +14,7 @@ const SignUp = ({ onClose1 }) => {
   const handleRegister = async (e) => {
     e.preventDefault();
     
-    // Show a toast message immediately after clicking the button
+    
     toast.info('Processing your request...', { position: 'top-center' });
     
     try {
