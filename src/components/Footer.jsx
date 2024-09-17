@@ -23,7 +23,7 @@ const Footer = () => {
       toast.error('Please enter your feedback before submitting', { position: 'top-center' });
     } else {
       toast.success('Feedback submitted successfully', { position: 'top-center' });
-      setFeedback(''); // Clear the textarea after successful submission
+      setFeedback(''); 
     }
   };
 

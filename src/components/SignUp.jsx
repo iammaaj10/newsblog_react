@@ -30,6 +30,11 @@ const SignUp = ({ onClose1 }) => {
         toast.dismiss();  // Dismiss the previous toast
         toast.success('User Registered Successfully', { position: 'top-center' });
       }
+      setEmail('');
+      setPassword('');
+      setPhone('');
+      setUsername('');
+      
     } catch (error) {
       console.log(error.message);
       toast.dismiss();  // Dismiss the previous toast
