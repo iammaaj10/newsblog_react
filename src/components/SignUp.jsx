@@ -74,7 +74,7 @@ const SignUp = ({ onClose1 }) => {
               required
             />
 
-            {/* Email input */}
+            {}
             <input
               type='email'
               placeholder='Enter the email'
